@@ -6,9 +6,9 @@ public class BuyChocolate {
     public static int countChoc(int cash, int price, int wraps){
         int choc = cash/price; //count of choc that could be purchase by cash
         int allWraps = cash/price; //count of wraps, that could be purchase by cash
-        for (int i = allWraps; i >=3 ; i-=2) {
+        for (int i = allWraps; i >=3 ; i-=wraps-1) {
             choc ++;
-            allWraps-=2;
+            allWraps-=wraps-1;
         }
         return choc;
     }

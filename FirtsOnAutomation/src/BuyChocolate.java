@@ -8,7 +8,7 @@ public class BuyChocolate {
         int allWraps = cash/price; //count of wraps, that could be purchase by cash
         for (int i = allWraps; i >=3 ; i-=wraps-1) {
             choc ++;
-            allWraps-=wraps-1;
+            allWraps-=wraps-1; // was changed 3 wraps to 1 choc, so was used 3 wraps and added 1 more (3-1)
         }
         return choc;
     }

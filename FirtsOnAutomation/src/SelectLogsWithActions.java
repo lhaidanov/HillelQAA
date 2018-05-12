@@ -16,13 +16,20 @@ public class SelectLogsWithActions {
     }
 
     public static void listFilesForFolder(final File folder) {
+
         for (final File fileEntry : folder.listFiles()) {
             if (fileEntry.isDirectory()) {
                 listFilesForFolder(fileEntry);
             } else {
                 if (fileEntry.isFile()) {
                     temp = fileEntry.getName();
-                    System.out.println("File= " + folder.getAbsolutePath()+ "\\" + fileEntry.getName());
+                    String p= folder.getAbsolutePath()+ "\\" + fileEntry.getName();
+                    System.out.println("File= " + p);
+                    String data = new String (getTextFromFile(p));
+//                    System.out.println(data);
+//                    for ( data : data.split(","))
+//                        System.out.println(isServerNumb(data));
+//                    return data;
                 }
 
             }
@@ -44,7 +51,7 @@ public class SelectLogsWithActions {
         return Pattern.compile(regex).matcher(text).find();
     }
 
-    public void TextToFile()
+    public static void TextToFile()
             throws IOException {
         String str = "Hello";
         BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\lhaidanov\\Downloads\\Logs\\allLogs.txt"));

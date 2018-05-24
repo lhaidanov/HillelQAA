@@ -17,7 +17,7 @@ public class ClearLogs {
         }
 
     }
-
+//Test
 
     //getting text from file
     private static String getTextFromFile(String filePath) {
